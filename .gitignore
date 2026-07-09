@@ -1,0 +1,21 @@
+# Root Node modules and builds
+node_modules/
+dist/
+dist-ssr/
+
+# Local Environment variables
+.env
+.env*.local
+*.local
+
+# Logs
+*.log
+logs/
+
+# Testing framework directories
+testsprite_tests/
+
+# Editor files
+.vscode/
+.idea/
+.DS_Store

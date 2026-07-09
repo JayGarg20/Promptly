@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variable Palette mapping Promptly monochrome theme */
+:root {
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-secondary: #5e5e5e;
+  --color-tertiary: #e3e2e2;
+  --color-background: #f9f9f9;
+  --color-on-background: #1a1c1c;
+  --color-surface: #f9f9f9;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #4c4546;
+  --color-outline: #7e7576;
+  --color-outline-variant: #cfc4c5;
+}
+
+/* Dark Mode theme overrides */
+.dark {
+  --color-primary: #ffffff;
+  --color-on-primary: #000000;
+  --color-secondary: #a3a3a3;
+  --color-tertiary: #2e2e2e;
+  --color-background: #121212;
+  --color-on-background: #e3e3e3;
+  --color-surface: #121212;
+  --color-surface-container: #1e1e1e;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #333333;
+  --color-surface-container-low: #1a1a1a;
+  --color-surface-container-lowest: #0d0d0d;
+  --color-on-surface: #e3e3e3;
+  --color-on-surface-variant: #b0a8a9;
+  --color-outline: #8e8586;
+  --color-outline-variant: #4c4546;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.012) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.012) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Grid overlay inside chat canvas */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px), 
+      linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.dark .grid-bg {
+  background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), 
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  opacity: 0.03;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-container-highest);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* Page transitions */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

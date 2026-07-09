@@ -29,7 +29,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-body bg-background relative overflow-hidden">
+    <div className="min-h-screen flex flex-col font-body bg-background relative overflow-y-auto">
       <div className="grid-bg"></div>
 
       {/* Header */}
